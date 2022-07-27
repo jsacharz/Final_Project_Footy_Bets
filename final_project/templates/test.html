@@ -1,0 +1,43 @@
+<h1 class="title">Students </h1>
+<div class="content">
+    {{ upcoming_data[0]['season']}}
+    <select id="match_week" name="match_week" style="align-items: right;">
+      {% for wk in weeknum_list %}
+        <option value={{ wk}}>{{ wk}}</option>
+      {% endfor %}
+    </select>
+    <table class="table table-striped" border="2.0" style="width:100%">
+        <thead>
+          <tr>
+            <th style="width:auto" scope="col">Wk</th>
+            <th scope="col" style="text-align:center">Day</th>
+            <th scope="col" style="text-align:center">Date</th>
+            <th scope="col" style="text-align:center">Time</th>
+            <th scope="col" style="text-align:center">Home</th>
+            <th scope="col" style="text-align:center">Away</th>
+            <th scope="col" style="text-align:center">Venue</th>
+            <th scope="col" style="text-align:center">Model 1</th>
+            <th scope="col" style="text-align:center">Model 2</th>
+            <th scope="col" style="text-align:center">Model 3</th>
+            <th scope="col" style="text-align:center">Model 4</th>
+          </tr>
+        </thead>
+        <tbody>
+        {% for x in upcoming_data %}
+        <tr>
+            <td>{{ x['wk']}}</td>
+            <td>{{ x['day']}}</td>
+            <td>{{ x['time']}}</td>
+            <td>{{ x['date']}}</td>
+            <td>{{ x['home']}}</td>
+            <td>{{ x['away']}}</td>
+            <td>{{ x['venue']}}</td>
+            <td>{{ x['mod1']}}</td>
+            <td>{{ x['mod2']}}</td>
+            <td>{{ x['mod3']}}</td>
+            <td>{{ x['mod4']}}</td>
+        </tr>
+        {% endfor %} 
+        </tbody>
+    </table>
+</div>
